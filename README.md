@@ -30,7 +30,8 @@ Este software é uma implementação em Java que não utiliza estruturas de dado
 
 ### Contribuidores
 
-- [Nomes e respectivos TIA/RA dos integrantes do grupo]
+- Gustavo Nascimento Siqueira
+- Felipe Ujvari Gasparino de Sousa
 
 ### Referências
 
