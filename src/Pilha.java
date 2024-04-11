@@ -2,80 +2,80 @@
 // Felipe Ujvari Gasparino de Sousa - xxxxxxxx
 
     /**
-     * Initializes a new instance of the {@link Pilha} class with a specified capacity.
+     * Inicializa uma nova instância da classe {@link Pilha} com uma capacidade especificada.
      *
-     * @param tamanho the initial capacity of the stack.
-     * @throws IllegalArgumentException if the specified capacity is negative.
+     * @param tamanho a capacidade inicial da pilha.
+     * @throws IllegalArgumentException se a capacidade especificada for negativa.
      */
     public class Pilha<T> {
-      private T[] elementos; // Array to store the elements of the stack
-      private int tamanho; // Capacity of the stack
-      private int topo = 0; // Index of the top element in the stack
+      private T[] elementos; // Array para armazenar os elementos da pilha
+      private int tamanho; // Capacidade da pilha
+      private int topo = 0; // Índice do elemento do topo da pilha
 
       @SuppressWarnings("unchecked")
       public Pilha(int tamanho) {
-        this.tamanho = tamanho;
-        elementos = (T[]) new Object[tamanho]; // Creating a new array of type T with the specified capacity
+      this.tamanho = tamanho;
+      elementos = (T[]) new Object[tamanho]; // Criando um novo array do tipo T com a capacidade especificada
       }
 
       /**
-       * Adds an item to the top of the stack.
+       * Adiciona um item ao topo da pilha.
        *
-       * @param item the item to be added.
-       * @throws IllegalStateException if the stack is full.
+       * @param item o item a ser adicionado.
+       * @throws IllegalStateException se a pilha estiver cheia.
        */
       public void push(T item) {
-        if (topo == elementos.length) {
-          throw new IllegalStateException("A pilha está cheia."); // Throws an exception if the stack is full
-        }
-        elementos[topo] = item; // Adds the item to the top of the stack
-        topo++; // Increments the top index
+      if (topo == elementos.length) {
+        throw new IllegalStateException("A pilha está cheia."); // Lança uma exceção se a pilha estiver cheia
+      }
+      elementos[topo] = item; // Adiciona o item ao topo da pilha
+      topo++; // Incrementa o índice do topo
       }
 
       /**
-       * Removes and returns the item at the top of the stack.
+       * Remove e retorna o item do topo da pilha.
        *
-       * @return the item removed from the top of the stack.
-       * @throws IllegalStateException if the stack is empty.
+       * @return o item removido do topo da pilha.
+       * @throws IllegalStateException se a pilha estiver vazia.
        */
       public T pop() {
-        if (isEmpty()) {
-          throw new IllegalStateException("A pilha está vazia."); // Throws an exception if the stack is empty
-        }
-        T itemRemovido = elementos[topo - 1]; // Retrieves the item at the top of the stack
-        elementos[topo - 1] = null; // Removes the reference to the item from the stack
-        topo--; // Decrements the top index
-        return itemRemovido; // Returns the removed item
+      if (isEmpty()) {
+        throw new IllegalStateException("A pilha está vazia."); // Lança uma exceção se a pilha estiver vazia
+      }
+      T itemRemovido = elementos[topo - 1]; // Obtém o item do topo da pilha
+      elementos[topo - 1] = null; // Remove a referência ao item da pilha
+      topo--; // Decrementa o índice do topo
+      return itemRemovido; // Retorna o item removido
       }
 
       /**
-       * Checks if the stack is empty.
+       * Verifica se a pilha está vazia.
        *
-       * @return true if the stack is empty, false otherwise.
+       * @return true se a pilha estiver vazia, false caso contrário.
        */
       public boolean isEmpty() {
-        return topo == 0; // Returns true if the top index is 0, indicating an empty stack
+      return topo == 0; // Retorna true se o índice do topo for 0, indicando uma pilha vazia
       }
 
       /**
-       * Returns the number of elements in the stack.
+       * Retorna o número de elementos na pilha.
        *
-       * @return the number of elements in the stack.
+       * @return o número de elementos na pilha.
        */
       public int size() {
-        return tamanho; // Returns the capacity of the stack
+      return tamanho; // Retorna a capacidade da pilha
       }
 
       /**
-       * Returns the item at the top of the stack without removing it.
+       * Retorna o item do topo da pilha sem removê-lo.
        *
-       * @return the item at the top of the stack.
-       * @throws IllegalStateException if the stack is empty.
+       * @return o item do topo da pilha.
+       * @throws IllegalStateException se a pilha estiver vazia.
        */
       public T peek() {
-        if (isEmpty()) {
-          throw new IllegalStateException("A pilha está vazia."); // Throws an exception if the stack is empty
-        }
-        return elementos[topo - 1]; // Returns the item at the top of the stack
+      if (isEmpty()) {
+        throw new IllegalStateException("A pilha está vazia."); // Lança uma exceção se a pilha estiver vazia
+      }
+      return elementos[topo - 1]; // Retorna o item do topo da pilha
       }
     }
